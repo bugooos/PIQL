@@ -325,47 +325,5 @@ def _infer_scalar_type(value) -> str:
     return "any"
 
 
-# ─── Built-in demo schema ─────────────────────────────────────────────────────
-
-_BUILTIN_SCHEMA: list[dict] = [
-    {"name": "User", "fields": [
-        {"name": "id",        "type": "uid",  "nullable": False},
-        {"name": "name",      "type": "str",  "nullable": False},
-        {"name": "email",     "type": "str",  "nullable": False},
-        {"name": "age",       "type": "int",  "nullable": True},
-        {"name": "role",      "type": "str",  "nullable": True},
-        {"name": "posts",     "type": "[Post]","nullable": True},
-        {"name": "settings",  "type": "UserSettings","nullable": True},
-        {"name": "createdAt", "type": "ts",   "nullable": False},
-    ]},
-    {"name": "Post", "fields": [
-        {"name": "id",        "type": "uid",  "nullable": False},
-        {"name": "title",     "type": "str",  "nullable": False},
-        {"name": "body",      "type": "str",  "nullable": True},
-        {"name": "author",    "type": "User", "nullable": False},
-        {"name": "authorId",  "type": "uid",  "nullable": False},
-        {"name": "score",     "type": "float","nullable": True},
-        {"name": "status",    "type": "enum(draft|published|archived)","nullable": False},
-        {"name": "tags",      "type": "[str]","nullable": True},
-        {"name": "createdAt", "type": "ts",   "nullable": False},
-        {"name": "updatedAt", "type": "ts",   "nullable": True},
-    ]},
-    {"name": "UserSettings", "fields": [
-        {"name": "theme",    "type": "enum(light|dark|system)","nullable": False},
-        {"name": "notify",   "type": "bool","nullable": False},
-        {"name": "timezone", "type": "str", "nullable": True},
-    ]},
-    {"name": "Org", "fields": [
-        {"name": "id",          "type": "uid","nullable": False},
-        {"name": "name",        "type": "str","nullable": False},
-        {"name": "plan",        "type": "str","nullable": False},
-        {"name": "memberCount", "type": "int","nullable": False},
-    ]},
-    {"name": "Message", "fields": [
-        {"name": "id",        "type": "uid","nullable": False},
-        {"name": "body",      "type": "str","nullable": False},
-        {"name": "authorId",  "type": "uid","nullable": False},
-        {"name": "channelId", "type": "uid","nullable": True},
-        {"name": "createdAt", "type": "ts", "nullable": False},
-    ]},
-]
+# Built-in demo schema removed — ship with empty built-in schema to avoid demo data
+_BUILTIN_SCHEMA: list[dict] = []

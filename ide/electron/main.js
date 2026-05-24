@@ -124,7 +124,6 @@ function buildMenu() {
     {
       label: 'Tools', submenu: [
         { label: 'Benchmark',                 click: () => send('open-panel:benchmark') },
-        { label: 'Mock Query',                click: () => send('open-panel:mockQuery') },
         { label: 'SDK Generator',             click: () => send('open-panel:sdkGenerate') },
         { label: 'Webhook Manager',           click: () => send('open-panel:sdkWebhook') },
         { label: 'Latency Statistics',        click: () => send('open-panel:obsLatency') },

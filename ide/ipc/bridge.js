@@ -327,10 +327,6 @@ function registerHandlers() {
   ipcMain.handle('benchmark:run', (_, { query, db, runs }) =>
     callPython('nexql_workbench', 'benchmark_query_runs',
       [String(query || ''), db || {}, Number(runs) || 10]));
-
-  ipcMain.handle('benchmark:mock', (_, { query, db }) =>
-    callPython('nexql_workbench', 'generate_mock_query_response',
-      [String(query || ''), db || {}]));
 }
 
 module.exports = { registerHandlers };

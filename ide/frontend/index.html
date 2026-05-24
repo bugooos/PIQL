@@ -995,19 +995,9 @@
       <div id="editor-area">
         <div id="editor-container">
           <div id="line-numbers"></div>
-          <div id="code-wrapper">
+            <div id="code-wrapper">
             <div id="highlight-layer"></div>
-            <textarea id="editor" placeholder="Write your Piql query here...
-  
-  Examples:
-    ? user (id &quot;u_001&quot;) { name email createdAt }
-    + post { title: &quot;Hello&quot; authorId: $userId } { id createdAt }
-    ~ post (id &quot;p_001&quot;) { status: published } { id updatedAt }
-    ! post (id &quot;p_001&quot;) { id }
-    >> messages($channelId: &quot;ch_1&quot;) { id body createdAt }
-  
-  Press Ctrl+Enter to execute.
-  " spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+            <textarea id="editor" placeholder="Write your Piql query here. Press Ctrl+Enter to execute." spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
           </div>
         </div>
       </div>

@@ -195,9 +195,3 @@ def benchmark_query_runs(query: str, db: dict, runs: int = 10, user_role: str = 
         "p95_ms": round(samples_sorted[p95_idx], 3),
     }
 
-
-def generate_mock_query_response(query: str, db: dict, user_role: str = "user") -> dict:
-    sandbox = copy.deepcopy(db)
-    result = execute_nexql(query, sandbox, user_role=user_role)
-    result["#mock"] = True
-    return result

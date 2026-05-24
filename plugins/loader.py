@@ -226,28 +226,7 @@ class PluginLoader:
         return entry.plugin if entry and entry.enabled else None
 
 
-# ─── Built-in example plugins ─────────────────────────────────────────────────
-
-class RateLimitPlugin(NexQLPlugin):
-    """Built-in @ratelimit directive handler."""
-
-    @property
-    def name(self) -> str:
-        return "rate_limit"
-
-    @property
-    def description(self) -> str:
-        return "Enforces @rate directive on subscription queries"
-
-    def register(self, runtime: PluginRuntime) -> None:
-        runtime.register_directive("rate", self._handle_rate)
-
-    @staticmethod
-    def _handle_rate(field_meta: dict, context: dict) -> bool:
-        """Return True if the field should be included at this moment."""
-        return True   # production: check rolling window
-
-
+# Built-in serializer plugin (kept - useful optional feature)
 class MsgPackPlugin(NexQLPlugin):
     """Built-in msgpack serializer (if msgpack is installed)."""
 
@@ -283,6 +262,5 @@ def get_default_loader() -> PluginLoader:
     global _DEFAULT_LOADER
     if _DEFAULT_LOADER is None:
         _DEFAULT_LOADER = PluginLoader()
-        _DEFAULT_LOADER.register_builtin(RateLimitPlugin())
         _DEFAULT_LOADER.register_builtin(MsgPackPlugin())
     return _DEFAULT_LOADER
