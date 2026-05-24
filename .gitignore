@@ -6,8 +6,8 @@ __pycache__/
 *.pyc
 .vscode/
 
-# Development & tooling artifacts — not shipped to production
-tooling/
+# Development & testing — not shipped to production
+tooling/tests/
 tests/
 launch.sh
 nexql-workbench.desktop
